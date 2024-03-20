@@ -2,7 +2,7 @@
 
 **Prerequisites:**
 
-* A Virtual Machine running a LAMP stack hosting an index.php website.
+* A Virtual Machine running a LAMP stack.
 * Basic understanding of command-line interfaces.
 
 **Procedure**
