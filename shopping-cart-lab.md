@@ -2,8 +2,9 @@
 
 **Prerequisites:**
 
-* A Virtual Machine running a LAMP stack.
+* A Virtual Machine (VM) running a LAMP stack.
 * Basic understanding of command-line interfaces.
+* A VS Code and Tunnelling extension installed on your VM.
 
 **Procedure**
 
