@@ -4,7 +4,7 @@
 
 * A Virtual Machine (VM) running a LAMP stack.
 * Basic understanding of command-line interfaces.
-* A VS Code and Tunnelling extension installed on your VM.
+* A VS Code and Tunneling extension installed on your VM.
 
 **Procedure**
 
