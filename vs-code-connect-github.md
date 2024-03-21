@@ -16,7 +16,7 @@
 
 2. **Create a VS Code Tunnel**
    ```bash
-   sudo code tunnel
+   cd /var/www/html/;sudo code tunnel --accept-server-license-terms
    ```
 
 3. **Open VS Code in Your Browser**  
