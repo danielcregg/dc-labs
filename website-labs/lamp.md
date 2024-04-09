@@ -1,4 +1,6 @@
-https://upload.wikimedia.org/wikipedia/commons/thum![LAMP](https://github.com/danielcregg/dc-labs/assets/22198586/944ad682-f532-4132-b013-e8a7d03c6b4b)  
+
+![LAMP](https://github.com/danielcregg/dc-labs/assets/22198586/944ad682-f532-4132-b013-e8a7d03c6b4b)  
+
 
 LAMP stack is a popular open-source web platform commonly used to run dynamic web sites and servers. It includes Linux, Apache, MySQL, and PHP and is considered by many the platform of choice for development and deployment of high-performance web applications which require a solid and reliable foundation. Here is a very informative video on the topic https://www.youtube.com/watch?v=WY8jwTNYTfg. 
 
