@@ -7,6 +7,7 @@ Linux is an operating system that controls the hardware and runs the softwar
 Apache is a popular web server software. A Web server is a program that uses HTTP (Hypertext Transfer Protocol) to serve the files that form Web pages to users, in response to their requests, which are forwarded by their computers' HTTP clients. 
 
 MySQL is a database management system.  
+![LAMP Description](https://github.com/danielcregg/dc-labs/assets/22198586/c90ec289-d918-43a2-ae0e-4dc8e8e59029)
 
 PHP is a server-side scripting language designed for web development. PHP code is interpreted by a web server via a PHP processor module, which generates the resulting web page. 
 
