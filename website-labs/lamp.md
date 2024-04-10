@@ -186,7 +186,7 @@ Navigate to your web server again using your browser and IP address. You should 
 
 Please confirm on the forum that you got everything working above. You will need this working to get your WordPress site running.  
 
-RESOURCES 
+# RESOURCES 
 
 https://protechgurus.com/setup-install-lamp-ubuntu-16-04-ec2-instance/ 
 
@@ -197,11 +197,3 @@ https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html#A
 https://www.taniarascia.com/create-a-simple-database-app-connecting-to-mysql-with-php/ 
 
 https://stackoverflow.com/questions/30594962/sqlstatehy000-1045-access-denied-for-user-rootlocalhost-using-password 
-
- 
-
-sudo apt update updates the list of available packages and their versions, but it does not install or upgrade any packages. 
-
-sudo apt- upgrade actually installs newer versions of the packages you have. After updating the lists, the package manager knows about available updates for the software you have installed. This is why you first want to update. 
-
-sudo -i       will get you admin user. 
