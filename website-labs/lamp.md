@@ -38,14 +38,14 @@ We can test that apache2 has installed correctly by trying to connect to our vir
 dig +short myip.opendns.com @resolver1.opendns.com 
 ```
 
-Enter the IP you got from the above command into a browser like below 
+Enter the IP you got from the above command into a browser like below:  
+
+![image](https://github.com/danielcregg/dc-labs/assets/22198586/94017af5-0a2f-4e09-a420-ac635303a2a6)
 
 
 When we enter the IP address of our web server into our browser it will send a http request to our web server. Our web server will respond by sending back the default html web page, index.html. This webpage, index.html, can be found on our web server in /var/www/html/index.html. You will see the Default Ubuntu Apache web page, which is there for informational and testing purposes. It should look something like this:  
 
-  
-
-  
+![image](https://github.com/danielcregg/dc-labs/assets/22198586/b5b46b41-9d24-41e7-8017-081687a3b31e)  
 
 If you see this page, then your web server is now correctly installed. If not, please restart the lab.  
 
@@ -53,27 +53,27 @@ If you see this page, then your web server is now correctly installed. If not, p
 
 Now that we have our web server up and running, it is time to install MySQL. MySQL is a database management system. It will organise and provide access to databases where our site can store information.  
 
-Run the following command to install MySQL: 
+Run the following command to install MySQL:  
 
- 
-
+```bash
 sudo apt -y install mysql-server 
+```
+To test that mySQL is installed correctly let us log in to mySQL using the following command:  
 
- 
-
-To test that mySQL is installed correctly let us log in to mySQL using the following command: 
-
+```bash
 sudo mysql 
+```
+You should see output like the following. Notice the command prompt has change to mysql>. You can now enter mySQL commands.  
 
-You should see output like the following. Notice the command prompt has change to mysql>. You can now enter mySQL commands. 
-
- 
+![image](https://github.com/danielcregg/dc-labs/assets/22198586/a93492a1-2f51-436d-8e7a-024bf5f29952)  
 
 To return back to our normal bash command prompt enter the following mySQL command: 
 
 exit 
 
-You should have output like below: 
+You should have output like below:  
+
+![image](https://github.com/danielcregg/dc-labs/assets/22198586/8a0241f7-d050-4b9d-93eb-e1de4feeed53)
 
 # STEP THREE — INSTALL PHP  
 
@@ -81,23 +81,27 @@ PHP is the component of our setup that will process code to display dynamic cont
 
 We can once again leverage the apt system to install our components. We're going to include some helper packages as well:  
 
+```bash
 sudo apt -y install php 
+```
 
 In order to test that our system is configured properly for PHP, we will create a basic PHP webpage file that contains some php code to display all php information. We will call this file info.php. For Apache to find the file and serve it correctly, it must be saved to a specific directory, which is called the "web root". This directory is located at /var/www/html/. We can create the file info.php at that location by running the following terminal command:  
 
+```bash
 sudo touch /var/www/html/info.php 
+```
 
 Run the following command to update the file permissions so that we can write to the file: 
 
+```bash
 sudo chmod 666 /var/www/html/info.php 
-
- 
+```
 
 We want to put the following php code inside the file:  
 
-  
-
-<?php phpinfo(); ?>  
+<?php  
+  phpinfo();  
+?>  
 
  
 
