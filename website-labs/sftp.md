@@ -16,7 +16,7 @@ sudo sed -i '/PermitRootLogin/c\PermitRootLogin yes' /etc/ssh/sshd_config
 ```bash
 sudo echo -e "tester\ntester" | sudo passwd root
 ```
-4. Restart the ssh Deamon.
+4. Restart the ssh Daemon.
 ```bash
 sudo systemctl restart sshd
 ```
