@@ -70,7 +70,7 @@ You should see output like the following. Notice the command prompt has change t
 To return back to our normal bash command prompt enter the following mySQL command:  
 
 ```sql
-exit 
+exit;
 ```
 You should have output like below:  
 
