@@ -67,10 +67,11 @@ You should see output like the following. Notice the command prompt has change t
 
 ![image](https://github.com/danielcregg/dc-labs/assets/22198586/a93492a1-2f51-436d-8e7a-024bf5f29952)  
 
-To return back to our normal bash command prompt enter the following mySQL command: 
+To return back to our normal bash command prompt enter the following mySQL command:  
 
+```sql
 exit 
-
+```
 You should have output like below:  
 
 ![image](https://github.com/danielcregg/dc-labs/assets/22198586/8a0241f7-d050-4b9d-93eb-e1de4feeed53)
