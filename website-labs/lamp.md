@@ -120,21 +120,19 @@ To do this we need to edit the file dir.conf in /etc/apache2/mods-enabled/
 
 The dir.conf currently looks like this:  
 
-\<IfModule mod_dir.c>  
-\
-&nbsp;&nbsp;&nbsp;&nbsp;DirectoryIndex index.html index.cgi index.pl **index.php** index.xhtml index.htm 
-
-\</IfModule>  
+&nbsp;&nbsp;&nbsp;&nbsp;\<IfModule mod_dir.c>  
+&nbsp;&nbsp;&nbsp;&nbsp;\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DirectoryIndex index.html index.cgi index.pl **index.php** index.xhtml index.htm 
+&nbsp;&nbsp;&nbsp;&nbsp;\
+&nbsp;&nbsp;&nbsp;&nbsp;\</IfModule>  
 
 We want to move the PHP index file highlighted above (in blue) to the first position after the DirectoryIndex specification, like this:  
 
- 
-
-\<IfModule mod_dir.c>  
-\
-&nbsp;&nbsp;&nbsp;&nbsp;DirectoryIndex **index.php** index.html index.cgi index.pl index.xhtml index.htm  
-
-\</IfModule> 
+&nbsp;&nbsp;&nbsp;&nbsp;\<IfModule mod_dir.c>  
+&nbsp;&nbsp;&nbsp;&nbsp;\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DirectoryIndex **index.php** index.html index.cgi index.pl index.xhtml index.htm  
+&nbsp;&nbsp;&nbsp;&nbsp;\
+&nbsp;&nbsp;&nbsp;&nbsp;\</IfModule> 
 
 To do this you can run the following terminal command:  
 
