@@ -1,39 +1,45 @@
-![LAMP](https://github.com/danielcregg/dc-labs/assets/22198586/944ad682-f532-4132-b013-e8a7d03c6b4b)  
+<p align="center">
+  <img src="https://github.com/danielcregg/dc-labs/assets/22198586/944ad682-f532-4132-b013-e8a7d03c6b4b">
+</p>
 
-LAMP stack is a popular open-source web platform commonly used to run dynamic web0sites. It includes **Linux**, **Apache**, **MySQL**, and **PHP** and is considered by many the platform of choice for development and deployment of high-performance web applications which require a solid and reliable foundation. Here is a very informative video on the topic https://www.youtube.com/watch?v=WY8jwTNYTfg. 
+LAMP stack is a popular open-source web platform commonly used to run dynamic websites. It includes **L**inux, **A**pache, **M**ySQL, and **P**HP and is considered by many the platform of choice for development and deployment of high-performance web applications which require a solid and reliable foundation. Here is a very informative video on the topic https://www.youtube.com/watch?v=WY8jwTNYTfg. 
 
-Linux is an operating system that controls the hardware and runs the software. 
+**Linux** is an operating system that controls the hardware and runs the software. 
 
-Apache is a popular web server software. A Web server is a program that uses HTTP (Hypertext Transfer Protocol) to serve the files that form Web pages to users, in response to their requests, which are forwarded by their computers' HTTP clients. 
+**Apache** is a popular web server software. A Web server is a program that uses HTTP (Hypertext Transfer Protocol) to serve the files that form Web pages to users, in response to their requests, which are forwarded by their computers' HTTP clients. 
 
-MySQL is a database management system.  
-![LAMP Description](https://github.com/danielcregg/dc-labs/assets/22198586/c90ec289-d918-43a2-ae0e-4dc8e8e59029)
+**MySQL** is a database management system.  
 
-PHP is a server-side scripting language designed for web development. PHP code is interpreted by a web server via a PHP processor module, which generates the resulting web page. 
+**PHP** is a server-side scripting language designed for web development. PHP code is interpreted by a web server via a PHP processor module, which generates the resulting web page.   
 
-https://upload.wikimedia.org/wikipedia/commons/f/fa/LAMPP_Architecture.png 
+<p align="center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/LAMPP_Architecture.png">
+</p>  
 
-STEP ONE — INSTALL APACHE  
+# STEP ONE - INSTALL APACHE
 
 The Apache web server is currently the most popular web server in the world, which makes it a great default choice for hosting a website. We can install Apache easily using Ubuntu's package manager, apt. A package manager allows us to install most software pain-free from a repository maintained by Ubuntu. You can learn more about how to use apt here.  
 
-We will get started by executing the below terminal command which will update our packages database and then upgrade all our packages to the latest versions. 
+We will get started by executing the below terminal command which will update our packages database and then upgrade all our packages to the latest versions.  
 
+```bash
 sudo apt update 
+```
 
 Next, we will install apache2, our web server program, using the following terminal command: 
 
+```bash
 sudo apt -y install apache2 
-
- 
+```
 
 We can test that apache2 has installed correctly by trying to connect to our virtual machine using a browser. To do this we will need your virtual machines public IP address. You can find your public IP using the follow command: 
 
+```bash
 dig +short myip.opendns.com @resolver1.opendns.com 
+```
 
 Enter the IP you got from the above command into a browser like below 
 
- 
 
 When we enter the IP address of our web server into our browser it will send a http request to our web server. Our web server will respond by sending back the default html web page, index.html. This webpage, index.html, can be found on our web server in /var/www/html/index.html. You will see the Default Ubuntu Apache web page, which is there for informational and testing purposes. It should look something like this:  
 
@@ -43,7 +49,7 @@ When we enter the IP address of our web server into our browser it will send a h
 
 If you see this page, then your web server is now correctly installed. If not, please restart the lab.  
 
-STEP TWO — INSTALL MYSQL  
+# STEP TWO — INSTALL MYSQL  
 
 Now that we have our web server up and running, it is time to install MySQL. MySQL is a database management system. It will organise and provide access to databases where our site can store information.  
 
@@ -69,11 +75,7 @@ exit
 
 You should have output like below: 
 
- 
-
- 
-
-STEP THREE — INSTALL PHP  
+# STEP THREE — INSTALL PHP  
 
 PHP is the component of our setup that will process code to display dynamic content. It can run scripts, connect to our MySQL databases to get information, and hand the processed content over to our web server to display.  
 
