@@ -174,12 +174,12 @@ Enter the following html code, then save and close the file (Ctrl + O and Ctrl +
 
 ```html
 <!DOCTYPE html>
-<html> 
-    <body>
-        <h1>My Heading</h1> 
-        <p>My paragraph.</p>
-    </body>
-</html> 
+<html>
+  <body>
+    <h1>My Heading</h1> 
+    <p>My paragraph.</p>
+  </body>
+</html>
 ```  
 
 Navigate to your web server again using your browser and IP address. You should see the following webpage:  
