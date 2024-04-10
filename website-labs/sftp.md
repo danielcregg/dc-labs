@@ -9,13 +9,10 @@ We want to be able to work on files on our laptop and then copy them over to our
 1. Enable root login to your remote VM by running the following commands on your VM. Make sure you have SSH’ed into your VM. You can copy the following commands all together and paste them into your terminal in the browser using shift + insert.  
  
 ```bash
-sudo sed -i '/PermitRootLogin/c\PermitRootLogin yes' /etc/ssh/sshd_config 
-
-sudo echo -e "tester\ntester" | sudo passwd root 
-
-sudo systemctl restart sshd 
-
-dig +short myip.opendns.com @resolver1.opendns.com 
+sudo sed -i '/PermitRootLogin/c\PermitRootLogin yes' /etc/ssh/sshd_config
+sudo echo -e "tester\ntester" | sudo passwd root
+sudo systemctl restart sshd
+dig +short myip.opendns.com @resolver1.opendns.com
 ```
  
 
