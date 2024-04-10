@@ -150,8 +150,6 @@ Finally, let’s update our default index.php webpage.
 
 Navigate to the folder containing the default index.html file and see if it exists:  
 
-![image](https://github.com/danielcregg/dc-labs/assets/22198586/6100a3ee-0a93-428e-99d2-c32223d0118c)
-
 ```bash
 cd /var/www/html/ 
 ```  
@@ -181,6 +179,8 @@ Enter the following html code, then save and close the file (Ctrl + O and Ctrl +
 ```  
 
 Navigate to your web server again using your browser and IP address. You should see the following webpage:  
+
+![image](https://github.com/danielcregg/dc-labs/assets/22198586/6100a3ee-0a93-428e-99d2-c32223d0118c)
 
 **Congratulations** you have now created a LAMP server! Please post any issues you are having (or have solved) to the forum.  
 
