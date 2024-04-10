@@ -115,9 +115,7 @@ sudo echo "<?php phpinfo(); ?>" > /var/www/html/info.php
 
 Now go to your browser and enter your public  IP/info.php (e.g. 53.24.55.9/info.php) address again. The webpage that comes back should look something like this:  
 
-  
-
-  
+![image](https://github.com/danielcregg/dc-labs/assets/22198586/da971cb9-aa35-49d6-af20-b82561fed086)  
 
 This page gives you information about your server from the perspective of PHP. It is useful for debugging and to ensure that your settings are being applied correctly. If this was successful, then your PHP is working as expected. 
 
@@ -153,7 +151,9 @@ sudo service apache2 restart
 
 Finally, let’s update our default index.php webpage. 
 
-Navigate to the folder containing the default index.html file and see if it exists: 
+Navigate to the folder containing the default index.html file and see if it exists:  
+
+![image](https://github.com/danielcregg/dc-labs/assets/22198586/6100a3ee-0a93-428e-99d2-c32223d0118c)
 
 cd /var/www/html/ 
 
