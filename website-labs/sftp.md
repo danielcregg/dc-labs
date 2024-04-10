@@ -6,8 +6,7 @@ We want to be able to work on files on our laptop and then copy them over to our
 
 ## STEPS: 
 
-1. Enable root login to your remote VM by running the following commands on your VM. Make sure you have SSH’ed into your VM. You can copy the following 3 commands all together and paste them into the Azure CLI in the browser using shift + insert.  
-
+1. Enable root login to your remote VM by running the following commands on your VM. Make sure you have SSH’ed into your VM. You can copy the following commands all together and paste them into your terminal in the browser using shift + insert.  
  
 ```bash
 sudo sed -i '/PermitRootLogin/c\PermitRootLogin yes' /etc/ssh/sshd_config 
