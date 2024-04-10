@@ -103,16 +103,11 @@ We want to put the following php code inside the file:
 &nbsp;&nbsp;&nbsp;&nbsp;phpinfo();  
 ?>  
 
- 
+To insert this code into the file run the following command:  
 
-To insert this code into the file run the following command: 
-
-  
-
+```bash
 sudo echo "<?php phpinfo(); ?>" > /var/www/html/info.php 
-
- 
-
+```  
 Now go to your browser and enter your public  IP/info.php (e.g. 53.24.55.9/info.php) address again. The webpage that comes back should look something like this:  
 
 ![image](https://github.com/danielcregg/dc-labs/assets/22198586/da971cb9-aa35-49d6-af20-b82561fed086)  
@@ -125,29 +120,33 @@ To do this we need to edit the file dir.conf in /etc/apache2/mods-enabled/
 
 The dir.conf currently looks like this:  
 
-<IfModule mod_dir.c>  
+\<IfModule mod_dir.c>  
+\
+&nbsp;&nbsp;&nbsp;&nbsp;DirectoryIndex index.html index.cgi index.pl **index.php** index.xhtml index.htm 
 
-    DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm 
-
-</IfModule>  
+\</IfModule>  
 
 We want to move the PHP index file highlighted above (in blue) to the first position after the DirectoryIndex specification, like this:  
 
  
 
-<IfModule mod_dir.c>  
+\<IfModule mod_dir.c>  
+\
+&nbsp;&nbsp;&nbsp;&nbsp;DirectoryIndex **index.php** index.html index.cgi index.pl index.xhtml index.htm  
 
-    DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm </IfModule> 
+\</IfModule> 
 
 To do this you can run the following terminal command:  
 
+```bash
 sudo sed -i.bak -e 's/DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm/DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm/g' /etc/apache2/mods-enabled/dir.conf; if [ $? -eq 0 ]; then echo "SUCCESS!"; else echo "FAILURE! - Please try again."; fi 
+```
 
 After this, we need to restart the Apache web server in order for our changes to be recognized. You can do this by typing this:  
 
+```bash
 sudo service apache2 restart 
-
- 
+```  
 
 Finally, let’s update our default index.php webpage. 
 
@@ -155,47 +154,35 @@ Navigate to the folder containing the default index.html file and see if it exis
 
 ![image](https://github.com/danielcregg/dc-labs/assets/22198586/6100a3ee-0a93-428e-99d2-c32223d0118c)
 
+```bash
 cd /var/www/html/ 
+```  
 
 Create an index.php file 
 
+```bash
 sudo touch /var/www/html/index.php 
+```
 
-Use the vi editor to open the new index.html file.  
+Use the nano editor to open the new index.html file.  
 
+```bash
 sudo nano /var/www/html/index.php 
-
- 
+```  
 
 Enter the following html code, then save and close the file (Ctrl + O and Ctrl + X). 
 
- 
-
-<!DOCTYPE html> 
-
+```html
+<!DOCTYPE html>
 <html> 
-
-        <body> 
-
- 
-
-                <h1>My Heading</h1> 
-
-                <p>My paragraph.</p> 
-
- 
-
-        </body> 
-
+    <body>
+        <h1>My Heading</h1> 
+        <p>My paragraph.</p>
+    </body>
 </html> 
-
- 
+```  
 
 Navigate to your web server again using your browser and IP address. You should see the following webpage:  
-
- 
-
- 
 
 Congratulations you have now created a LAMP server! Please post any issues you are having (or have solved) to the forum.  
 
