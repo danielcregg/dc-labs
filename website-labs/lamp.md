@@ -99,8 +99,8 @@ sudo chmod 666 /var/www/html/info.php
 
 We want to put the following php code inside the file:  
 
-<?php  
-  phpinfo();  
+\<?php  
+&nbsp;&nbsp;&nbsp;&nbsp;phpinfo();  
 ?>  
 
  
