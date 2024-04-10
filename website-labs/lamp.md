@@ -126,7 +126,7 @@ The dir.conf currently looks like this:
 &nbsp;&nbsp;&nbsp;&nbsp;\
 &nbsp;&nbsp;&nbsp;&nbsp;\</IfModule> 
 
-We want to move the PHP index file highlighted above (in blue) to the first position after the DirectoryIndex specification, like this:  
+We want to move the PHP index file, highlighted above in bold, to the first position after the DirectoryIndex specification, like this:  
 
 &nbsp;&nbsp;&nbsp;&nbsp;\<IfModule mod_dir.c>  
 &nbsp;&nbsp;&nbsp;&nbsp;\
@@ -182,7 +182,7 @@ Enter the following html code, then save and close the file (Ctrl + O and Ctrl +
 
 Navigate to your web server again using your browser and IP address. You should see the following webpage:  
 
-Congratulations you have now created a LAMP server! Please post any issues you are having (or have solved) to the forum.  
+**Congratulations** you have now created a LAMP server! Please post any issues you are having (or have solved) to the forum.  
 
 Please confirm on the forum that you got everything working above. You will need this working to get your WordPress site running.  
 
