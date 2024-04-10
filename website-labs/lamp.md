@@ -122,9 +122,9 @@ The dir.conf currently looks like this:
 
 &nbsp;&nbsp;&nbsp;&nbsp;\<IfModule mod_dir.c>  
 &nbsp;&nbsp;&nbsp;&nbsp;\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DirectoryIndex index.html index.cgi index.pl **index.php** index.xhtml index.htm 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DirectoryIndex index.html index.cgi index.pl **index.php** index.xhtml index.htm  
 &nbsp;&nbsp;&nbsp;&nbsp;\
-&nbsp;&nbsp;&nbsp;&nbsp;\</IfModule>  
+&nbsp;&nbsp;&nbsp;&nbsp;\</IfModule> 
 
 We want to move the PHP index file highlighted above (in blue) to the first position after the DirectoryIndex specification, like this:  
 
