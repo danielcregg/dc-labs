@@ -24,7 +24,12 @@ Before you can use Postman for REST API requests in Wordpress you will need to c
    ![image](https://github.com/danielcregg/dc-labs/assets/22198586/4ae3e110-4be4-479e-94e6-829c0e473ae6)
    Check the response was successul. Take note of the ID of the new post you created. Now go to Wordpress and check under Posts for your new post.
    
-3. Read (GET): To read a post, send a GET request to the /wp/v2/posts/<id> endpoint, where <id> is the ID of the post you want to read.
-   
-4. Update (POST or PUT): To update a post, send a POST or PUT request to the /wp/v2/posts/<id> endpoint with the updated post data in the request body.
-5. Delete (DELETE): To delete a post, send a DELETE request to the /wp/v2/posts/<id> endpoint.
+3. Read (GET): To read a post, send a GET request to the /index.php/wp-json/wp/v2/posts/<id> endpoint (e.g., /index.php/wp-json/wp/v2/posts/1), where <id> is the ID of the post you want to read.
+4. Update (POST or PUT): To update a post, send a POST or PUT request to the /index.php/wp-json/wp/v2/posts/<id> endpoint (e.g., /index.php/wp-json/wp/v2/posts/1) with the updated post data in the request body.
+   ```json
+   {
+    "title": "My New Post Updated",
+    "content": "This is the content of my new post updated"
+   }
+   ```
+6. Delete (DELETE): To delete a post, send a DELETE request to the /index.php/wp-json/wp/v2/posts/<id> endpoint (e.g., /index.php/wp-json/wp/v2/posts/1).
