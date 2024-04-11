@@ -10,7 +10,7 @@ Before you can use Postman for REST API requests in Wordpress you will need to c
 6. Go to Postman, Under Authorization select Basic Auth from the dropdown menu. Beside Username put your Wordpress username (e.g., admin) and beside password put the Application password you just generated above (e.g., vfRY 9k2z tuV5 5W2W vFE7 qix2)
     ![image](https://github.com/danielcregg/dc-labs/assets/22198586/e0b110ed-9b6c-4149-a663-9cce2a033b4e)
 
-** If your have a domina name and https enabled make sure you use this in the below API requests e.g., https://randombusiness.tech/index.php/wp-json/wp/v2/posts **
+**If your have a domain name and https enabled make sure you use this in the below API requests e.g., https://randombusiness.tech/index.php/wp-json/wp/v2/posts**
     
 1. Create (POST): To create a new post, send a POST request to the /index.php/wp-json/wp/v2/posts/ endpoint with the post data in the request body.  
    In postman create a POST request
