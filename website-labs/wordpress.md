@@ -91,7 +91,8 @@ Copy WordPress files to the Apache document root and set appropriate permissions
 sudo cp -rf /home/$USER/wordpress/* /var/www/html/
 
 # Set proper ownership for the web server
-sudo chown -R apache:apache /var/www/html/
+sudo chown -R apache:apache /var/www/html
+sudo chown apache:apache /var/www/html/.*
 
 ```
 
