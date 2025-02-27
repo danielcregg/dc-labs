@@ -25,10 +25,9 @@
 
 ### 1. Create WordPress Database and User
 
-First, we'll create a database and user for WordPress to use:
+First, we'll create a database and user for WordPress to use. Log in to MySQL as root by issuing the following command:
 
 ```bash
-# Log in to MySQL as root
 sudo mysql
 ```
 
