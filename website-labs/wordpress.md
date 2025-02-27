@@ -134,7 +134,7 @@ sudo systemctl restart httpd
 <summary>Find your instance's public IP address</summary>
 
 ```bash
-dig +short myip.opendns.com @resolver1.opendns.com
+curl -s ifconfig.me
 ```
 </details>
 
