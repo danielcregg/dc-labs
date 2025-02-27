@@ -59,7 +59,7 @@ These commands:
 Set the root password to `tester` with this command:
 
 ```bash
-sudo echo -e "tester\ntester" | sudo passwd root
+sudo echo -e "testervm\ntestervm" | sudo passwd root
 ```
 
 ### 4. Identify Your IP Address
@@ -67,7 +67,7 @@ sudo echo -e "tester\ntester" | sudo passwd root
 Retrieve your public IP address:
 
 ```bash
-dig +short myip.opendns.com @resolver1.opendns.com
+curl -s ifconfig.me
 ```
 
 **Important:** Make a note of this IP address as you'll need it in the next steps.
