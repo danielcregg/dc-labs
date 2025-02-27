@@ -122,7 +122,7 @@ Install the PHP extensions that WordPress requires:
 
 ```bash
 # Install required and recommended PHP extensions
-sudo dnf install php-mysqlnd php-gd php-curl php-xml php-mbstring php-imagick php-zip php-intl php-json -y
+sudo dnf install php-mysqli php-mysqlnd php-gd php-curl php-xml php-mbstring php-imagick php-zip php-intl php-json -y
 
 # Restart Apache to load the new extensions
 sudo systemctl restart httpd
