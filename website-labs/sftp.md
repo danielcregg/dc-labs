@@ -85,7 +85,7 @@ curl -s ifconfig.me
    |-------|-------|
    | Host name | *Your VM IP address* |
    | User name | **root** |
-   | Password | **tester** |
+   | Password | **te$tervm1** |
 
 3. Click **Login**
 
