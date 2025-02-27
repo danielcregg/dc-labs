@@ -29,6 +29,7 @@ First, we'll create a database and user for WordPress to use. Log in to MySQL as
 
 ```bash
 sudo mysql
+
 ```
 
 Inside the MySQL prompt, execute these commands:
