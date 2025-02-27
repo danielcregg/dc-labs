@@ -70,9 +70,13 @@ Next, download the latest version of WordPress:
 # Download WordPress to your home directory
 sudo wget -P /home/$USER/ https://wordpress.org/latest.tar.gz
 
+```
+```bash
 # Extract the WordPress archive
 sudo tar zxvf /home/$USER/latest.tar.gz -C /home/$USER/
 
+```
+```bash
 # Clean up the downloaded archive
 sudo rm /home/$USER/latest.tar.gz
 
