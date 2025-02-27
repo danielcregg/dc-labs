@@ -21,33 +21,6 @@
 - Basic understanding of terminal commands
 - LAMP stack installed (Linux, Apache, MySQL, PHP)
 
-<details>
-<summary>If you haven't installed the LAMP stack yet, click here</summary>
-
-Install Apache, MySQL, and PHP with these commands:
-
-```bash
-# Update system packages
-sudo dnf update -y
-
-# Install Apache
-sudo dnf install httpd -y
-sudo systemctl enable httpd
-sudo systemctl start httpd
-
-# Install MySQL (MariaDB)
-sudo dnf install mariadb mariadb-server -y
-sudo systemctl enable mariadb
-sudo systemctl start mariadb
-sudo mysql_secure_installation
-# Follow the prompts to secure your MySQL installation
-
-# Install PHP and common extensions
-sudo dnf install php php-mysqlnd -y
-sudo systemctl restart httpd
-```
-</details>
-
 ## Step-by-Step Guide
 
 ### 1. Create WordPress Database and User
