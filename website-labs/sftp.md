@@ -59,7 +59,7 @@ These commands:
 Set the root password to `tester` with this command:
 
 ```bash
-sudo echo -e "testervm\ntestervm" | sudo passwd root
+sudo echo -e 'te$tervm1\nte$tervm1' | sudo passwd root
 ```
 
 ### 4. Identify Your IP Address
