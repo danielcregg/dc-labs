@@ -52,12 +52,14 @@ FLUSH PRIVILEGES;
 
 # Exit MySQL
 exit;
+
 ```
 
 Restart MySQL to ensure changes take effect:
 
 ```bash
 sudo systemctl restart mariadb
+
 ```
 
 ### 2. Download WordPress
@@ -73,6 +75,7 @@ sudo tar zxvf /home/$USER/latest.tar.gz -C /home/$USER/
 
 # Clean up the downloaded archive
 sudo rm /home/$USER/latest.tar.gz
+
 ```
 
 ### 3. Configure Document Root and Permissions
@@ -85,6 +88,7 @@ sudo cp -rf /home/$USER/wordpress/* /var/www/html/
 
 # Set proper ownership for the web server
 sudo chown -R apache:apache /var/www/html/
+
 ```
 
 > ⚠️ **Note**: Amazon Linux 2023 uses `apache` as the web server user, not `www-data` like Ubuntu.
@@ -99,6 +103,7 @@ sudo dnf install php-mysqli php-mysqlnd php-gd php-curl php-xml php-mbstring php
 
 # Restart Apache to load the new extensions
 sudo systemctl restart httpd
+
 ```
 
 ### 5. Complete Web Installation
