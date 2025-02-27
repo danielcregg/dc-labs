@@ -46,8 +46,8 @@ ssh vm
 Run the following commands to enable root login:
 
 ```bash
-sudo sed -i '/PermitRootLogin/c\PermitRootLogin yes' /etc/ssh/sshd_config
 sudo sed -i '/PasswordAuthentication/c\PasswordAuthentication yes' /etc/ssh/sshd_config
+sudo sed -i '/PermitRootLogin/c\PermitRootLogin yes' /etc/ssh/sshd_config
 sudo systemctl restart sshd
 ```
 
