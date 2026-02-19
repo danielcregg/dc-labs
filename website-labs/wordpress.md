@@ -458,5 +458,3 @@ sudo systemctl restart httpd
 </details>
 
 ---
-
-*This guide was prepared for educational purposes as part of AWS cloud services training.*
