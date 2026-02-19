@@ -78,9 +78,9 @@ curl -sL https://raw.githubusercontent.com/danielcregg/dc-labs/main/website-labs
 
 > 📝 **Note**: Amazon Linux 2023 ships with **MariaDB**, which is a fully MySQL-compatible drop-in replacement. You will see references to both `mysql` (the client command) and `mariadb` (the service name) throughout this guide — they refer to the same underlying system.
 
-### Upgrade to Recommended Versions
+### Upgrade to Latest Versions
 
-WordPress recommends **PHP 8.3+** and **MariaDB 10.11+**. The default LAMP stack on Amazon Linux 2023 ships with older versions (PHP 8.2 and MariaDB 10.5). Run the following command to automatically upgrade both to the recommended versions:
+The default LAMP stack on Amazon Linux 2023 may not ship with the latest PHP and MariaDB versions. Run the following command to automatically detect and upgrade to the latest versions available in the dnf repositories:
 
 ```bash
 curl -sL https://raw.githubusercontent.com/danielcregg/dc-labs/main/website-labs/update-lamp-stack.sh | bash
@@ -93,18 +93,18 @@ curl -sL https://raw.githubusercontent.com/danielcregg/dc-labs/main/website-labs
   ║        LAMP STACK  UPGRADE  COMPLETE        ║
   ╠═════════════════════════════════════════════╣
   ║                                             ║
-  ║   PHP      : 8.3.x                         ║
-  ║   MariaDB  : 10.11.x                       ║
+  ║   PHP      : x.x.x                         ║
+  ║   MariaDB  : xx.xx.x                       ║
   ║                                             ║
   ╠═════════════════════════════════════════════╣
   ║                                             ║
-  ║   [OK]  All components meet requirements    ║
+  ║   [OK]  All components upgraded             ║
   ║   [OK]  LAMP stack is ready for WordPress   ║
   ║                                             ║
   ╚═════════════════════════════════════════════╝
 ```
 
-> 📝 If your versions already meet the requirements, the script will skip the upgrade and report that everything is up to date.
+> 📝 The script automatically detects the latest available versions. If your versions are already up to date, it will skip the upgrade and report that everything is current. The script also installs all PHP extensions required by WordPress.
 
 ---
 
@@ -305,25 +305,31 @@ graph TD
 
 ### 4. Install Required PHP Extensions
 
-WordPress depends on several PHP extensions. If you ran the upgrade script in the prerequisites, these were already installed — run this command to confirm they are all present:
+WordPress depends on several PHP extensions. If you ran the upgrade script in the prerequisites, these were already installed. Run the command below to confirm they are all present. Replace `X.X` with your installed PHP version (e.g. `8.3`, `8.4`):
 
 ```bash
-sudo dnf install php8.3-mysqli php8.3-mysqlnd php8.3-gd php8.3-curl php8.3-xml php8.3-mbstring php8.3-zip php8.3-intl -y
+# Check your PHP version first
+php -v | head -n1
+```
+
+```bash
+# Install extensions (replace X.X with your version, e.g. 8.3)
+sudo dnf install phpX.X-mysqli phpX.X-mysqlnd phpX.X-gd phpX.X-curl phpX.X-xml phpX.X-mbstring phpX.X-zip phpX.X-intl -y
 ```
 
 The table below explains what each extension does and whether it is required or recommended:
 
 | Extension | Purpose | Required? |
 |-----------|---------|-----------|
-| `php8.3-mysqli` / `php8.3-mysqlnd` | Database connectivity to MariaDB | ✅ Required |
-| `php8.3-gd` | Image resizing and thumbnail generation | ✅ Required |
-| `php8.3-curl` | External HTTP requests (updates, APIs) | ✅ Required |
-| `php8.3-xml` | XML parsing for feeds and plugins | ✅ Required |
-| `php8.3-mbstring` | Multi-byte string handling for non-Latin text | ✅ Required |
-| `php8.3-zip` | Installing/updating plugins and themes | ✅ Required |
-| `php8.3-intl` | Internationalisation support | ⭐ Recommended |
+| `mysqli` / `mysqlnd` | Database connectivity to MariaDB | ✅ Required |
+| `gd` | Image resizing and thumbnail generation | ✅ Required |
+| `curl` | External HTTP requests (updates, APIs) | ✅ Required |
+| `xml` | XML parsing for feeds and plugins | ✅ Required |
+| `mbstring` | Multi-byte string handling for non-Latin text | ✅ Required |
+| `zip` | Installing/updating plugins and themes | ✅ Required |
+| `intl` | Internationalisation support | ⭐ Recommended |
 
-> 📝 **Note**: `php-json` is built into PHP 8.3 and does not need a separate package. `php-imagick` may require the EPEL repository on Amazon Linux 2023 — WordPress will automatically fall back to `php8.3-gd` for image processing if it is not available.
+> 📝 **Note**: `json` is built into PHP 8.x and does not need a separate package. `imagick` may require the EPEL repository on Amazon Linux 2023 — WordPress will automatically fall back to `gd` for image processing if it is not available.
 
 ```bash
 # Restart Apache to load all newly installed extensions
