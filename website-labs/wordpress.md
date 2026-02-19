@@ -220,17 +220,17 @@ Download the latest version of WordPress to your home directory:
 
 ```bash
 # Download WordPress
-sudo wget -P /home/$USER/ https://wordpress.org/latest.tar.gz
+wget -P /home/$USER/ https://wordpress.org/latest.tar.gz
 ```
 
 ```bash
 # Extract the archive
-sudo tar zxvf /home/$USER/latest.tar.gz -C /home/$USER/
+tar zxvf /home/$USER/latest.tar.gz -C /home/$USER/
 ```
 
 ```bash
 # Remove the downloaded archive to keep things tidy
-sudo rm /home/$USER/latest.tar.gz
+rm /home/$USER/latest.tar.gz
 ```
 
 ---
@@ -261,7 +261,6 @@ graph TD
     ROOT --> WI[wp-includes/]
     ROOT --> WA[wp-admin/]
     ROOT --> IDX[index.php]
-    ROOT --> CFG[wp-config.php ⚠️]
     ROOT --> HTX[.htaccess ⚠️]
 
     WC --> THM[themes/]
@@ -269,11 +268,10 @@ graph TD
     WC --> UPL[uploads/]
 
     style ROOT fill:#238636,color:#fff,stroke:none
-    style CFG fill:#9e6a03,color:#fff,stroke:none
     style HTX fill:#9e6a03,color:#fff,stroke:none
 ```
 
-> 📝 Files marked ⚠️ are the most security-sensitive in your installation. `wp-config.php` contains your database credentials, and `.htaccess` controls server-level access rules. Protect both carefully in production.
+> 📝 The file marked ⚠️ (`.htaccess`) controls server-level access rules — protect it carefully in production. Note that `wp-config.php` does not exist yet at this stage; it will be generated automatically by the web installer in Step 5.
 
 ---
 
@@ -338,6 +336,8 @@ Now complete the installation through your web browser:
 
 5. **Run the installation** — click **"Submit"** then **"Run the installation"**
 
+   > 📝 **Note**: When you click "Submit", WordPress automatically creates a `wp-config.php` file in `/var/www/html/` containing your database credentials and connection settings.
+
 6. **Set up your site**
 
    | Field | Value |
@@ -350,6 +350,13 @@ Now complete the installation through your web browser:
    Click **"Install WordPress"**
 
 7. **Log in** using your new admin credentials — you're done! 🎉
+
+### Verify Your Installation
+
+After logging in, confirm everything is working:
+
+- **Homepage**: Navigate to `http://<your-ip>/` — you should see your site with the default WordPress theme
+- **Admin Dashboard**: Navigate to `http://<your-ip>/wp-admin/` — you should see the WordPress admin panel with the "Welcome to WordPress" message
 
 ---
 
@@ -416,17 +423,34 @@ sudo mysql -e "SHOW GRANTS FOR 'wordpressuser'@'localhost';"
 
 ## Reset Instructions
 
-To wipe everything and start fresh, run:
+To wipe everything and start fresh, run each command below in order:
+
+> ⚠️ **Warning**: These commands will permanently delete WordPress files and database content. Ensure you have backups if needed.
 
 ```bash
-sudo rm -rf ~/wordpress && \
-sudo rm -f ~/latest.tar.gz && \
-sudo rm -rf /var/www/html/* && \
-sudo mysql -u root -e "DROP DATABASE IF EXISTS wordpress; DROP USER IF EXISTS 'wordpressuser'@'localhost'; FLUSH PRIVILEGES;" && \
-sudo systemctl restart httpd
+# Remove WordPress source files from your home directory
+rm -rf ~/wordpress
 ```
 
-> ⚠️ **Warning**: This will permanently delete the WordPress files from your home directory and all content from your web root (`/var/www/html/`). Use with caution and ensure you have backups if needed.
+```bash
+# Remove the downloaded archive (if it still exists)
+rm -f ~/latest.tar.gz
+```
+
+```bash
+# Clear the Apache document root
+sudo rm -rf /var/www/html/*
+```
+
+```bash
+# Drop the WordPress database and user
+sudo mysql -u root -e "DROP DATABASE IF EXISTS wordpress; DROP USER IF EXISTS 'wordpressuser'@'localhost'; FLUSH PRIVILEGES;"
+```
+
+```bash
+# Restart Apache to apply the clean state
+sudo systemctl restart httpd
+```
 
 ---
 
