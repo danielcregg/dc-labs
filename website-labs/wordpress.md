@@ -128,32 +128,6 @@ graph TD
     B -.->|Serves static files\ndirectly| A
 ```
 
-### Installation Process Overview
-
-This is the sequence of steps you will follow in this guide:
-
-```mermaid
-flowchart TD
-    A([▶ Start]) --> B
-
-    B[1️⃣ Create Database & User\nCreate wordpress DB\nCreate wordpressuser]
-    B --> C[2️⃣ Download WordPress\nwget latest.tar.gz\nExtract to home dir]
-    C --> D[3️⃣ Configure Permissions\nCopy files to /var/www/html\nchown apache:apache]
-    D --> E[4️⃣ Install PHP Extensions\ndnf install php-mysqli\nphp-gd php-curl etc.]
-    E --> F[5️⃣ Web Installer\nOpen browser\nEnter DB credentials\nSet site title & admin]
-    F --> G([✅ WordPress Running])
-
-    style A fill:#238636,color:#fff,stroke:none
-    style G fill:#238636,color:#fff,stroke:none
-    style B fill:#1c2128,color:#e6edf3,stroke:#30363d
-    style C fill:#1c2128,color:#e6edf3,stroke:#30363d
-    style D fill:#1c2128,color:#e6edf3,stroke:#30363d
-    style E fill:#1c2128,color:#e6edf3,stroke:#30363d
-    style F fill:#1c2128,color:#e6edf3,stroke:#30363d
-```
-
----
-
 ## Step-by-Step Guide
 
 ### 1. Create WordPress Database and User
