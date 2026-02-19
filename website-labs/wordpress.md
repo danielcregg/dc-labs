@@ -13,7 +13,7 @@
   - [4. Install Required PHP Extensions](#4-install-required-php-extensions)
   - [5. Complete Web Installation](#5-complete-web-installation)
 - [Troubleshooting](#troubleshooting)
-- [Reset Instructions](#reset-instructions)
+- [⛔ Reset Instructions (Danger Zone)](#-reset-instructions-danger-zone)
 
 ---
 
@@ -421,11 +421,14 @@ sudo mysql -e "SHOW GRANTS FOR 'wordpressuser'@'localhost';"
 
 ---
 
-## Reset Instructions
+## ⛔ Reset Instructions (Danger Zone)
+
+> **🔴 STOP — Only use these commands if you need to completely wipe your WordPress installation and start over. These actions are irreversible.**
+
+<details>
+<summary>🔽 Click here to reveal reset commands</summary>
 
 To wipe everything and start fresh, run each command below in order:
-
-> ⚠️ **Warning**: These commands will permanently delete WordPress files and database content. Ensure you have backups if needed.
 
 ```bash
 # Remove WordPress source files from your home directory
@@ -451,6 +454,8 @@ sudo mysql -u root -e "DROP DATABASE IF EXISTS wordpress; DROP USER IF EXISTS 'w
 # Restart Apache to apply the clean state
 sudo systemctl restart httpd
 ```
+
+</details>
 
 ---
 
