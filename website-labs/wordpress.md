@@ -78,6 +78,34 @@ curl -sL https://raw.githubusercontent.com/danielcregg/dc-labs/main/website-labs
 
 > 📝 **Note**: Amazon Linux 2023 ships with **MariaDB**, which is a fully MySQL-compatible drop-in replacement. You will see references to both `mysql` (the client command) and `mariadb` (the service name) throughout this guide — they refer to the same underlying system.
 
+### Upgrade to Recommended Versions
+
+WordPress recommends **PHP 8.3+** and **MariaDB 10.11+**. The default LAMP stack on Amazon Linux 2023 ships with older versions (PHP 8.2 and MariaDB 10.5). Run the following command to automatically upgrade both to the recommended versions:
+
+```bash
+curl -sL https://raw.githubusercontent.com/danielcregg/dc-labs/main/website-labs/update-lamp-stack.sh | bash
+```
+
+**Expected output after a successful upgrade:**
+
+```
+  ╔═════════════════════════════════════════════╗
+  ║        LAMP STACK  UPGRADE  COMPLETE        ║
+  ╠═════════════════════════════════════════════╣
+  ║                                             ║
+  ║   PHP      : 8.3.x                         ║
+  ║   MariaDB  : 10.11.x                       ║
+  ║                                             ║
+  ╠═════════════════════════════════════════════╣
+  ║                                             ║
+  ║   [OK]  All components meet requirements    ║
+  ║   [OK]  LAMP stack is ready for WordPress   ║
+  ║                                             ║
+  ╚═════════════════════════════════════════════╝
+```
+
+> 📝 If your versions already meet the requirements, the script will skip the upgrade and report that everything is up to date.
+
 ---
 
 ## Architecture Overview
@@ -277,27 +305,25 @@ graph TD
 
 ### 4. Install Required PHP Extensions
 
-WordPress depends on several PHP extensions. Install them all in one command:
+WordPress depends on several PHP extensions. If you ran the upgrade script in the prerequisites, these were already installed — run this command to confirm they are all present:
 
 ```bash
-sudo dnf install php-mysqli php-mysqlnd php-gd php-curl php-xml php-mbstring php-zip php-intl php-json php-imagick -y
+sudo dnf install php8.3-mysqli php8.3-mysqlnd php8.3-gd php8.3-curl php8.3-xml php8.3-mbstring php8.3-zip php8.3-intl -y
 ```
 
 The table below explains what each extension does and whether it is required or recommended:
 
 | Extension | Purpose | Required? |
 |-----------|---------|-----------|
-| `php-mysqli` / `php-mysqlnd` | Database connectivity to MariaDB | ✅ Required |
-| `php-gd` | Image resizing and thumbnail generation | ✅ Required |
-| `php-curl` | External HTTP requests (updates, APIs) | ✅ Required |
-| `php-xml` | XML parsing for feeds and plugins | ✅ Required |
-| `php-mbstring` | Multi-byte string handling for non-Latin text | ✅ Required |
-| `php-zip` | Installing/updating plugins and themes | ✅ Required |
-| `php-intl` | Internationalisation support | ⭐ Recommended |
-| `php-json` | JSON parsing | ⭐ Recommended |
-| `php-imagick` | Advanced image processing (superior to GD) | ⭐ Recommended |
+| `php8.3-mysqli` / `php8.3-mysqlnd` | Database connectivity to MariaDB | ✅ Required |
+| `php8.3-gd` | Image resizing and thumbnail generation | ✅ Required |
+| `php8.3-curl` | External HTTP requests (updates, APIs) | ✅ Required |
+| `php8.3-xml` | XML parsing for feeds and plugins | ✅ Required |
+| `php8.3-mbstring` | Multi-byte string handling for non-Latin text | ✅ Required |
+| `php8.3-zip` | Installing/updating plugins and themes | ✅ Required |
+| `php8.3-intl` | Internationalisation support | ⭐ Recommended |
 
-> 📝 **Note**: `php-imagick` may require the EPEL repository on Amazon Linux 2023. If the package is not found, you can omit it — WordPress will automatically fall back to the `php-gd` library for image processing.
+> 📝 **Note**: `php-json` is built into PHP 8.3 and does not need a separate package. `php-imagick` may require the EPEL repository on Amazon Linux 2023 — WordPress will automatically fall back to `php8.3-gd` for image processing if it is not available.
 
 ```bash
 # Restart Apache to load all newly installed extensions
