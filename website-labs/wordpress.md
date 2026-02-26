@@ -313,8 +313,8 @@ php -v | head -n1
 ```
 
 ```bash
-# Install extensions (replace X.X with your version, e.g. 8.3)
-sudo dnf install phpX.X-mysqli phpX.X-mysqlnd phpX.X-gd phpX.X-curl phpX.X-xml phpX.X-mbstring phpX.X-zip phpX.X-intl -y
+# Install extensions
+sudo dnf install php-mysqli php-mysqlnd php-gd php-curl php-xml php-mbstring php-zip php-intl -y
 ```
 
 The table below explains what each extension does and whether it is required or recommended:
